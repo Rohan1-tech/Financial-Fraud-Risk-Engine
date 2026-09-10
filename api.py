@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import pandas as pd
 
@@ -16,6 +17,19 @@ app = FastAPI(
     title="Financial Fraud Risk Engine API",
     description="REST API for financial transaction fraud-risk scoring.",
     version="1.0.0",
+)
+
+
+# --------------------------------------------------
+# CORS configuration
+# --------------------------------------------------
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
@@ -46,6 +60,21 @@ class Transaction(BaseModel):
 
 
 # --------------------------------------------------
+# Root endpoint
+# --------------------------------------------------
+
+@app.get("/")
+def root():
+    return {
+        "message": "Financial Fraud Risk Engine API",
+        "status": "online",
+        "docs": "/docs",
+        "health": "/health",
+        "predict": "/predict",
+    }
+
+
+# --------------------------------------------------
 # Health check
 # --------------------------------------------------
 
@@ -71,7 +100,7 @@ def predict(transaction: Transaction):
             [transaction.model_dump()]
         )
 
-        # Use the EXISTING project scoring function
+        # Use the existing project scoring function
         scored = score_dataframe(
             df,
             threshold=threshold,
@@ -94,16 +123,16 @@ def predict(transaction: Transaction):
                 if item.strip()
             ]
 
+        fraud_flag = int(result["fraud_flag"])
+
         return {
             "fraud_probability": float(
                 result["fraud_probability"]
             ),
-            "fraud_flag": int(
-                result["fraud_flag"]
-            ),
+            "fraud_flag": fraud_flag,
             "risk_level": (
                 "HIGH"
-                if int(result["fraud_flag"]) == 1
+                if fraud_flag == 1
                 else "LOW"
             ),
             "reason_codes": reason_codes,
