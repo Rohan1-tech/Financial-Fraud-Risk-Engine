@@ -7,7 +7,11 @@
 ![SHAP](https://img.shields.io/badge/SHAP-Explainability-orange)
 ![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688)
 ![React](https://img.shields.io/badge/React-Frontend-61DAFB)
-![Streamlit](https://img.shields.io/badge/Streamlit-Reference%20Dashboard-red)
+![Vite](https://img.shields.io/badge/Vite-Build%20Tool-646CFF)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Processing-150458)
+![NumPy](https://img.shields.io/badge/NumPy-Scientific%20Computing-013243)
+![Recharts](https://img.shields.io/badge/Recharts-Visualization-22B5BF)
+![REST API](https://img.shields.io/badge/REST%20API-Model%20Serving-555555)
 ![Render](https://img.shields.io/badge/Render-Deployed-purple)
 ![CI](https://github.com/Rohan1-tech/Financial-Fraud-Risk-Engine/actions/workflows/ci.yml/badge.svg)
 
