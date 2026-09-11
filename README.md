@@ -20,7 +20,7 @@ The workflow generates a **fraud probability**, applies a configurable **decisio
 
 The solution combines **Machine Learning, FastAPI, React, Explainable AI, batch scoring, analytics, automated testing, and cloud deployment** into a complete end-to-end fraud-risk workflow.
 
-> **Important:** This project uses **synthetic transaction data** and is intended as a portfolio and research demonstration. It is not a production fraud detection system and should not be used for real financial decisions without appropriate real-world data, validation, monitoring, governance, compliance review, security controls, and domain-expert approval.
+
 
 ---
 
