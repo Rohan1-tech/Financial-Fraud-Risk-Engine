@@ -1273,11 +1273,6 @@ The project includes automated tests for data generation, validation, scoring, t
 
 The frontend/backend connection is configured through an environment variable rather than hardcoding the production API URL into the frontend application.
 
----
-
-## Limitations
-
-This project intentionally has limitations because it is a portfolio and research demonstration.
 
 ### Data
 
