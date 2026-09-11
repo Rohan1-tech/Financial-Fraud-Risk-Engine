@@ -1,355 +1,234 @@
-🚨 Financial Fraud Risk Engine
 
-           
+#  Financial Fraud Risk Engine
 
-An end-to-end fraud-risk analytics and decision-support system that helps identify suspicious financial transactions using machine learning, fraud probability scoring, cost-sensitive thresholding, explainable AI, batch scoring, REST API model serving, and an interactive analyst dashboard.
+
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue) ![scikit-learn](https://img.shields.io/badge/scikit--learn-Risk%20Modeling-green) ![SHAP](https://img.shields.io/badge/SHAP-Explainability-orange) ![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688) ![React](https://img.shields.io/badge/React-Frontend-61DAFB) ![Vite](https://img.shields.io/badge/Vite-Build%20Tool-646CFF) ![Pandas](https://img.shields.io/badge/Pandas-Data%20Processing-150458) ![NumPy](https://img.shields.io/badge/NumPy-Scientific%20Computing-013243) ![Recharts](https://img.shields.io/badge/Recharts-Visualization-22B5BF) ![REST API](https://img.shields.io/badge/REST%20API-Model%20Serving-555555) ![Render](https://img.shields.io/badge/Render-Deployed-purple) ![CI](https://github.com/Rohan1-tech/Financial-Fraud-Risk-Engine/actions/workflows/ci.yml/badge.svg)
+
+An end-to-end **fraud-risk analytics and decision-support system** that helps identify **suspicious financial transactions** using **machine learning, fraud probability scoring, cost-sensitive thresholding, explainable AI, batch scoring, REST API model serving, and an interactive analyst dashboard**.
 
 The system analyzes transaction-level behavioral and risk signals such as:
 
-Transaction Amount
+- Transaction Amount
+- Transaction Timing
+- Device Risk
+- IP Risk
+- Transaction Type
+- Merchant Category
+- Country
 
-Transaction Timing
+The workflow generates a **fraud probability**, applies a configurable **decision threshold**, assigns a **Low / Medium / High / Critical risk band**, and provides **reason codes and SHAP-based explanations** to support analyst review.
 
-Device Risk
+The solution combines **Machine Learning, FastAPI, React, Explainable AI, batch scoring, analytics, automated testing, and cloud deployment** into a complete end-to-end fraud-risk workflow.
 
-IP Risk
+> **Important:** This project uses **synthetic transaction data** and is intended as a portfolio and research demonstration. It is not a production fraud detection system and should not be used for real financial decisions without appropriate real-world data, validation, monitoring, governance, compliance review, security controls, and domain-expert approval.
 
-Transaction Type
+---
 
-Merchant Category
-
-Country
-
-The workflow generates a fraud probability, applies a configurable decision threshold, assigns a Low / Medium / High / Critical risk band, and provides reason codes and SHAP-based explanations to support analyst review.
-
-The solution combines Machine Learning, FastAPI, React, Explainable AI, batch scoring, analytics, automated testing, and cloud deployment into a complete end-to-end fraud-risk workflow.
-
-Important: This project uses synthetic transaction data and is intended as a portfolio and research demonstration. It is not a production fraud detection system and should not be used for real financial decisions without appropriate real-world data, validation, monitoring, governance, compliance review, security controls, and domain-expert approval.
-
-📌 Project Overview
+## 📌 Project Overview
 
 Traditional fraud detection approaches can become difficult to manage because of:
 
-Large volumes of financial transactions
-
-Highly imbalanced fraud data
-
-Different costs associated with false positives and missed fraud
-
-Difficulty interpreting individual model predictions
-
-High investigation workload for fraud analysts
-
-Need for configurable fraud-risk thresholds
-
-Requirement for batch transaction scoring
-
-Need to expose ML models through usable applications
+- Large volumes of financial transactions
+- Highly imbalanced fraud data
+- Different costs associated with false positives and missed fraud
+- Difficulty interpreting individual model predictions
+- High investigation workload for fraud analysts
+- Need for configurable fraud-risk thresholds
+- Requirement for batch transaction scoring
+- Need to expose ML models through usable applications
 
 The Financial Fraud Risk Engine addresses these challenges by combining:
 
-Machine Learning-based fraud probability scoring
+- Machine Learning-based fraud probability scoring
+- Cost-sensitive threshold optimization
+- Risk-band classification
+- Analyst-friendly reason codes
+- SHAP-based model explainability
+- Batch transaction scoring
+- FastAPI model serving
+- React-based analyst dashboard
+- User-level risk analysis
+- Portfolio-level analytics
+- Model-performance review
+- CSV export and investigation workflows
+- Automated testing and CI
+- Cloud deployment
 
-Cost-sensitive threshold optimization
+The project demonstrates how a Data Scientist can take a fraud model beyond a notebook and build a **complete ML decision workflow — from data preparation and model evaluation to threshold policy, prediction, explainability, API serving, analyst investigation, and deployment.**
 
-Risk-band classification
+---
 
-Analyst-friendly reason codes
+## 📋 Table of Contents
 
-SHAP-based model explainability
+- [What the Project Demonstrates](#what-the-project-demonstrates)
+- [What This Project Does](#what-this-project-does)
+- [What This Project Does Not Do](#what-this-project-does-not-do)
+- [Key Features](#key-features)
+- [System Workflow](#system-workflow)
+- [Application Architecture](#application-architecture)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Synthetic Data Generator](#synthetic-data-generator)
+- [Training and Evaluation](#training-and-evaluation)
+- [Threshold Policy Artifacts](#threshold-policy-artifacts)
+- [Batch Scoring](#batch-scoring)
+- [FastAPI Backend](#fastapi-backend)
+- [React Frontend](#react-frontend)
+- [Streamlit Reference Dashboard](#streamlit-reference-dashboard)
+- [Explainability and Reason Codes](#explainability-and-reason-codes)
+- [Risk Bands and Decision Policy](#risk-bands-and-decision-policy)
+- [Evaluation Metrics](#evaluation-metrics)
+- [Verified Deployed Results](#verified-deployed-results)
+- [Individual Transaction Verification](#individual-transaction-verification)
+- [Visual Reports](#visual-reports)
+- [Testing and CI](#testing-and-ci)
+- [Code Quality](#code-quality)
+- [Deployment](#deployment)
+- [Production-Oriented Engineering Decisions](#production-oriented-engineering-decisions)
+- [Limitations](#limitations)
+- [Responsible Use](#responsible-use)
+- [Future Improvements](#future-improvements)
+- [Tech Stack](#tech-stack)
+- [Key Technical Concepts Demonstrated](#key-technical-concepts-demonstrated)
+- [Project Status](#project-status)
+- [Author](#author)
+- [Final Project Workflow](#final-project-workflow)
 
-Batch transaction scoring
+---
 
-FastAPI model serving
-
-React-based analyst dashboard
-
-User-level risk analysis
-
-Portfolio-level analytics
-
-Model-performance review
-
-CSV export and investigation workflows
-
-Automated testing and CI
-
-Cloud deployment
-
-The project demonstrates how a Data Scientist can take a fraud model beyond a notebook and build a complete ML decision workflow — from data preparation and model evaluation to threshold policy, prediction, explainability, API serving, analyst investigation, and deployment.
-
-📋 Table of Contents
-
-What the Project Demonstrates
-
-What This Project Does
-
-What This Project Does Not Do
-
-Key Features
-
-System Workflow
-
-Application Architecture
-
-Project Structure
-
-Installation
-
-Quick Start
-
-Synthetic Data Generator
-
-Training and Evaluation
-
-Threshold Policy Artifacts
-
-Batch Scoring
-
-FastAPI Backend
-
-React Frontend
-
-Streamlit Reference Dashboard
-
-Explainability and Reason Codes
-
-Risk Bands and Decision Policy
-
-Evaluation Metrics
-
-Verified Deployed Results
-
-Individual Transaction Verification
-
-Visual Reports
-
-Testing and CI
-
-Code Quality
-
-Deployment
-
-Production-Oriented Engineering Decisions
-
-Limitations
-
-Responsible Use
-
-Future Improvements
-
-Tech Stack
-
-Key Technical Concepts Demonstrated
-
-Project Status
-
-Author
-
-Final Project Workflow
-
-What the Project Demonstrates
+## What the Project Demonstrates
 
 This project demonstrates an end-to-end approach to building a fraud-risk decision-support application rather than stopping at model training.
 
-Machine Learning
+### Machine Learning
 
-Fraud-risk classification
+- Fraud-risk classification
+- Probability prediction
+- Reusable scikit-learn preprocessing and modeling pipeline
+- Class-imbalance-aware evaluation
+- Baseline comparisons
+- Probability calibration assessment
 
-Probability prediction
+### Decisioning
 
-Reusable scikit-learn preprocessing and modeling pipeline
+- Cost-sensitive threshold selection
+- Precision/recall trade-offs
+- Review-capacity considerations
+- Fraud probability ranking
+- Risk-band classification
+- Analyst triage support
 
-Class-imbalance-aware evaluation
+### Explainable AI
 
-Baseline comparisons
+- SHAP-based individual prediction explanations
+- Feature contribution analysis
+- Analyst-friendly reason codes
+- Direction-aware model explanations
 
-Probability calibration assessment
+### ML Engineering
 
-Decisioning
+- Input validation
+- Saved model artifacts
+- Saved threshold policy
+- Batch scoring
+- Reproducible evaluation artifacts
+- Automated testing
+- Continuous integration
 
-Cost-sensitive threshold selection
+### Application Engineering
 
-Precision/recall trade-offs
+- FastAPI REST model serving
+- React + Vite frontend
+- Frontend/backend integration
+- User-level risk analysis
+- Analytics dashboards
+- CSV export
+- Cloud deployment
 
-Review-capacity considerations
+---
 
-Fraud probability ranking
-
-Risk-band classification
-
-Analyst triage support
-
-Explainable AI
-
-SHAP-based individual prediction explanations
-
-Feature contribution analysis
-
-Analyst-friendly reason codes
-
-Direction-aware model explanations
-
-ML Engineering
-
-Input validation
-
-Saved model artifacts
-
-Saved threshold policy
-
-Batch scoring
-
-Reproducible evaluation artifacts
-
-Automated testing
-
-Continuous integration
-
-Application Engineering
-
-FastAPI REST model serving
-
-React + Vite frontend
-
-Frontend/backend integration
-
-User-level risk analysis
-
-Analytics dashboards
-
-CSV export
-
-Cloud deployment
-
-What This Project Does
+## What This Project Does
 
 The project can:
 
-Generate a harder synthetic fraud dataset with overlap and label noise
+- Generate a harder synthetic fraud dataset with overlap and label noise
+- Prepare train/test transaction datasets
+- Train a fraud-risk model using a scikit-learn pipeline
+- Evaluate ROC-AUC, PR-AUC, Brier score, and classification metrics
+- Compare against simple baselines
+- Search thresholds using cost-sensitive metrics
+- Generate threshold policy artifacts for analyst review
+- Score new transaction CSV files
+- Validate required input columns before training or scoring
+- Add fraud probabilities and binary fraud flags
+- Assign Low / Medium / High / Critical risk bands
+- Add analyst-friendly reason codes to scored transactions
+- Sort scored outputs by fraud probability
+- Provide SHAP explanations for individual transactions
+- Serve predictions through a FastAPI backend
+- Provide transaction-level REST API access
+- Provide user-level risk analysis
+- Provide a React analyst-facing frontend
+- Provide dashboard-level risk monitoring
+- Provide analytics and model-performance views
+- Export scored transaction data
+- Run automated tests and CI workflows
+- Deploy the application for public portfolio demonstration
 
-Prepare train/test transaction datasets
+---
 
-Train a fraud-risk model using a scikit-learn pipeline
+## What This Project Does Not Do
 
-Evaluate ROC-AUC, PR-AUC, Brier score, and classification metrics
+This project does **not**:
 
-Compare against simple baselines
-
-Search thresholds using cost-sensitive metrics
-
-Generate threshold policy artifacts for analyst review
-
-Score new transaction CSV files
-
-Validate required input columns before training or scoring
-
-Add fraud probabilities and binary fraud flags
-
-Assign Low / Medium / High / Critical risk bands
-
-Add analyst-friendly reason codes to scored transactions
-
-Sort scored outputs by fraud probability
-
-Provide SHAP explanations for individual transactions
-
-Serve predictions through a FastAPI backend
-
-Provide transaction-level REST API access
-
-Provide user-level risk analysis
-
-Provide a React analyst-facing frontend
-
-Provide dashboard-level risk monitoring
-
-Provide analytics and model-performance views
-
-Export scored transaction data
-
-Run automated tests and CI workflows
-
-Deploy the application for public portfolio demonstration
-
-What This Project Does Not Do
-
-This project does not:
-
-Detect real fraud in production
-
-Use real banking or payment-network data
-
-Guarantee fraud decisions are fair, compliant, or deployable
-
-Replace human fraud analysts
-
-Replace compliance, legal, or model-risk review
-
-Provide real-time streaming detection
-
-Include production-grade drift monitoring
-
-Include automated production retraining
-
-Prove performance on real-world fraud distributions
-
-Provide production-grade authentication and authorization
-
-Provide production-grade audit logging
-
-Automatically block financial transactions
+- Detect real fraud in production
+- Use real banking or payment-network data
+- Guarantee fraud decisions are fair, compliant, or deployable
+- Replace human fraud analysts
+- Replace compliance, legal, or model-risk review
+- Provide real-time streaming detection
+- Include production-grade drift monitoring
+- Include automated production retraining
+- Prove performance on real-world fraud distributions
+- Provide production-grade authentication and authorization
+- Provide production-grade audit logging
+- Automatically block financial transactions
 
 A production fraud system would require stronger governance, live monitoring, adversarial testing, compliance controls, access control, audit logging, human escalation workflows, and validation against real-world data.
 
-Key Features
+---
 
-Synthetic fraud data generator with overlap, class imbalance, and label noise
+## Key Features
 
-Reusable scikit-learn pipeline with preprocessing and model training
+- **Synthetic fraud data generator** with overlap, class imbalance, and label noise
+- **Reusable scikit-learn pipeline** with preprocessing and model training
+- **Data validation** for training and scoring inputs
+- **Cost-sensitive threshold search**
+- **PR-AUC and Brier score** for imbalanced probability evaluation
+- **Baseline comparisons** for majority, prior, and stratified-random strategies
+- **Threshold policy artifacts** for cost, recall, precision, and review-capacity trade-offs
+- **Batch scoring CLI** for new transaction files
+- **Risk-band classification** for analyst-friendly risk interpretation
+- **Reason-code generation** for analyst-friendly review
+- **SHAP explainability** for selected transactions
+- **FastAPI backend** for model serving
+- **REST API endpoints** for prediction, scoring, transactions, and explanations
+- **React frontend** for professional risk monitoring
+- **Transaction analysis** for individual risk investigation
+- **User risk analysis** for user-level transaction review
+- **Analytics dashboard** for portfolio-level monitoring
+- **Model Performance dashboard** for model-quality review
+- **CSV export** for scored transaction data
+- **Unit tests and GitHub Actions CI**
+- **Generated reports and figures**
+- **Render deployment**
 
-Data validation for training and scoring inputs
+---
 
-Cost-sensitive threshold search
+## System Workflow
 
-PR-AUC and Brier score for imbalanced probability evaluation
-
-Baseline comparisons for majority, prior, and stratified-random strategies
-
-Threshold policy artifacts for cost, recall, precision, and review-capacity trade-offs
-
-Batch scoring CLI for new transaction files
-
-Risk-band classification for analyst-friendly risk interpretation
-
-Reason-code generation for analyst-friendly review
-
-SHAP explainability for selected transactions
-
-FastAPI backend for model serving
-
-REST API endpoints for prediction, scoring, transactions, and explanations
-
-React frontend for professional risk monitoring
-
-Transaction analysis for individual risk investigation
-
-User risk analysis for user-level transaction review
-
-Analytics dashboard for portfolio-level monitoring
-
-Model Performance dashboard for model-quality review
-
-CSV export for scored transaction data
-
-Unit tests and GitHub Actions CI
-
-Generated reports and figures
-
-Render deployment
-
-System Workflow
-
+```text
 Synthetic or raw transactions
           ↓
 Data preparation and validation
@@ -375,11 +254,15 @@ React analyst application
 Dashboard / Transactions / Users / Analytics
           ↓
 Analyst review and CSV export
+````
 
-Application Architecture
+---
+
+## Application Architecture
 
 The project separates the machine-learning workflow from the application and presentation layers.
 
+```text
                      ┌─────────────────────────┐
                      │   Synthetic / Input Data │
                      └────────────┬────────────┘
@@ -436,25 +319,25 @@ The project separates the machine-learning workflow from the application and pre
                                   │
                                   ▼
                            Analyst Review
+```
 
-Architecture Principles
+### Architecture Principles
 
 The implementation separates:
 
-Data and ML logic
-
-Saved model artifacts
-
-API/model serving
-
-Frontend presentation
-
-Testing and CI
+1. **Data and ML logic**
+2. **Saved model artifacts**
+3. **API/model serving**
+4. **Frontend presentation**
+5. **Testing and CI**
 
 This makes the trained model reusable independently of the user interface.
 
-Project Structure
+---
 
+## Project Structure
+
+```text
 Financial-Fraud-Risk-Engine/
 │
 ├── .github/
@@ -525,72 +408,61 @@ Financial-Fraud-Risk-Engine/
 ├── pyproject.toml
 ├── requirements.txt
 └── README.md
+```
 
-Layer Responsibilities
+### Layer Responsibilities
 
-Layer
+| Layer                | Responsibility                                                     |
+| -------------------- | ------------------------------------------------------------------ |
+| `src/`               | Data preparation, modeling, evaluation, scoring and explainability |
+| `models/`            | Trained model and saved threshold artifacts                        |
+| `reports/`           | Evaluation metrics, policy artifacts and charts                    |
+| `api.py`             | FastAPI model-serving and application API                          |
+| `frontend/`          | React analyst-facing monitoring application                        |
+| `app.py`             | Original Streamlit analytical reference dashboard                  |
+| `tests/`             | Automated project and workflow validation                          |
+| `.github/workflows/` | Continuous integration                                             |
 
-Responsibility
+---
 
-src/
+## Installation
 
-Data preparation, modeling, evaluation, scoring and explainability
+### 1. Clone the Repository
 
-models/
-
-Trained model and saved threshold artifacts
-
-reports/
-
-Evaluation metrics, policy artifacts and charts
-
-api.py
-
-FastAPI model-serving and application API
-
-frontend/
-
-React analyst-facing monitoring application
-
-app.py
-
-Original Streamlit analytical reference dashboard
-
-tests/
-
-Automated project and workflow validation
-
-.github/workflows/
-
-Continuous integration
-
-Installation
-
-1. Clone the Repository
-
+```bash
 git clone https://github.com/Rohan1-tech/Financial-Fraud-Risk-Engine.git
 cd Financial-Fraud-Risk-Engine
+```
 
-2. Create a Virtual Environment
+### 2. Create a Virtual Environment
 
-Windows CMD
+#### Windows CMD
 
+```bash
 python -m venv .venv
 .venv\Scripts\activate
+```
 
-macOS / Linux
+#### macOS / Linux
 
+```bash
 python -m venv .venv
 source .venv/bin/activate
+```
 
-3. Install Python Requirements
+### 3. Install Python Requirements
 
+```bash
 pip install -r requirements.txt
+```
 
-Quick Start
+---
+
+## Quick Start
 
 Run the local ML workflow:
 
+```bash
 python -m src.generate_synthetic_data \
   --rows 3500 \
   --fraud-rate 0.08 \
@@ -607,68 +479,83 @@ python -m src.evaluate
 python -m src.score_new_transactions \
   data/processed/transactions_test.csv \
   --output_csv reports/metrics/test_scored.csv
+```
 
 For the application layer, start the backend and frontend separately.
 
-Backend
+### Backend
 
+```bash
 python -m uvicorn api:app --port 8001
+```
 
 Local backend:
 
+```text
 http://127.0.0.1:8001
+```
 
-Frontend
+### Frontend
 
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
 The Vite development server will provide the local frontend URL.
 
-Synthetic Data Generator
+---
+
+## Synthetic Data Generator
 
 The project includes a synthetic fraud-data generator:
 
+```bash
 python -m src.generate_synthetic_data \
   --rows 3500 \
   --fraud-rate 0.08 \
   --label-noise 0.04 \
   --seed 42 \
   --output data/raw/synthetic_fraud_dataset.csv
+```
 
 The generator creates a harder dataset than a deterministic toy example by adding:
 
-overlapping legitimate and fraud patterns
-
-controlled label noise
-
-false-positive-looking legitimate transactions
-
-lower-risk-looking fraud transactions
-
-class imbalance
-
-stochastic fraud labels
+* overlapping legitimate and fraud patterns
+* controlled label noise
+* false-positive-looking legitimate transactions
+* lower-risk-looking fraud transactions
+* class imbalance
+* stochastic fraud labels
 
 This makes threshold selection and precision/recall trade-offs more meaningful.
 
-Training and Evaluation
+---
 
-Prepare Train/Test Data
+## Training and Evaluation
 
+### Prepare Train/Test Data
+
+```bash
 python -m src.data_prep
+```
 
-Train the Fraud Model
+### Train the Fraud Model
 
+```bash
 python -m src.train_model
+```
 
-Evaluate the Model
+### Evaluate the Model
 
+```bash
 python -m src.evaluate
+```
 
 Evaluation outputs include:
 
+```text
 reports/metrics/metrics.json
 reports/metrics/evaluation_summary.json
 reports/metrics/threshold_search.json
@@ -680,8 +567,11 @@ reports/figures/calibration_curve.png
 reports/figures/threshold_cost_curve.png
 reports/figures/threshold_tradeoffs.png
 reports/figures/confusion_matrix.png
+```
 
-Threshold Policy Artifacts
+---
+
+## Threshold Policy Artifacts
 
 Fraud thresholds are business decisions.
 
@@ -691,104 +581,74 @@ A high threshold reduces review volume but can miss fraud.
 
 This project generates policy artifacts to make those trade-offs easier to inspect:
 
+```text
 reports/metrics/threshold_policy.json
 reports/metrics/threshold_policy.csv
 reports/metrics/threshold_policy.md
+```
 
 Policy candidates include:
 
-Policy
+| Policy            | Purpose                                                   |
+| ----------------- | --------------------------------------------------------- |
+| `cost_optimized`  | Minimizes configured false-positive / false-negative cost |
+| `balanced_f1`     | Balances precision and recall using F1 score              |
+| `high_recall`     | Prioritizes catching fraud cases                          |
+| `high_precision`  | Prioritizes reducing false positives                      |
+| `review_capacity` | Keeps the flagged transaction rate within review capacity |
 
-Purpose
+> These policies are decision-support artifacts, not automatic approval or rejection rules.
 
-cost_optimized
+---
 
-Minimizes configured false-positive / false-negative cost
-
-balanced_f1
-
-Balances precision and recall using F1 score
-
-high_recall
-
-Prioritizes catching fraud cases
-
-high_precision
-
-Prioritizes reducing false positives
-
-review_capacity
-
-Keeps the flagged transaction rate within review capacity
-
-These policies are decision-support artifacts, not automatic approval or rejection rules.
-
-Batch Scoring
+## Batch Scoring
 
 Score a transaction file:
 
+```bash
 python -m src.score_new_transactions \
   data/processed/transactions_test.csv \
   --output_csv reports/metrics/scored_transactions.csv
+```
 
 The scored output includes:
 
-Column
-
-Description
-
-fraud_probability
-
-Model-estimated fraud probability
-
-fraud_flag
-
-Binary flag based on the saved or provided threshold
-
-risk_band
-
-Low / Medium / High / Critical
-
-reason_codes
-
-Human-readable risk drivers for analyst review
+| Column              | Description                                          |
+| ------------------- | ---------------------------------------------------- |
+| `fraud_probability` | Model-estimated fraud probability                    |
+| `fraud_flag`        | Binary flag based on the saved or provided threshold |
+| `risk_band`         | Low / Medium / High / Critical                       |
+| `reason_codes`      | Human-readable risk drivers for analyst review       |
 
 The output is sorted by descending fraud probability so the riskiest transactions appear first.
 
-FastAPI Backend
+---
 
-The trained machine-learning pipeline is exposed through a FastAPI backend.
+## FastAPI Backend
+
+The trained machine-learning pipeline is exposed through a **FastAPI backend**.
 
 The API provides a serving layer between the machine-learning model and the React frontend.
 
-Backend Responsibilities
+### Backend Responsibilities
 
 The backend handles:
 
-health/status checks
+* health/status checks
+* model metadata
+* transaction retrieval
+* individual transaction prediction
+* transaction explanations
+* SHAP explanations
+* batch scoring
+* CSV scoring
+* scored-data export
+* threshold handling
+* frontend integration
 
-model metadata
+### API Endpoints
 
-transaction retrieval
-
-individual transaction prediction
-
-transaction explanations
-
-SHAP explanations
-
-batch scoring
-
-CSV scoring
-
-scored-data export
-
-threshold handling
-
-frontend integration
-
-API Endpoints
-
+```text
 GET  /
 GET  /health
 GET  /metadata
@@ -802,19 +662,25 @@ POST /score
 POST /score-csv
 
 GET  /export.csv
+```
 
-Run the Backend Locally
+### Run the Backend Locally
 
+```bash
 python -m uvicorn api:app --port 8001
+```
 
 The local backend runs at:
 
+```text
 http://127.0.0.1:8001
+```
 
 FastAPI also provides automatically generated OpenAPI documentation for inspecting and testing the available API endpoints.
 
-Model Serving Flow
+### Model Serving Flow
 
+```text
 API Request
     ↓
 Input Validation
@@ -832,192 +698,156 @@ Risk Band
 Reason Codes
     ↓
 API Response
+```
 
-React Frontend
+---
 
-The project includes a professional React + Vite frontend.
+## React Frontend
+
+The project includes a professional **React + Vite** frontend.
 
 The frontend consumes the FastAPI backend and provides an analyst-oriented interface for reviewing fraud risk.
 
-Dashboard
+### Dashboard
 
 The Dashboard provides portfolio-level monitoring including:
 
-total transactions
+* total transactions
+* flagged transactions
+* flagged rate
+* P95 fraud probability
+* average probability
+* maximum probability
+* true fraud rate
+* selected threshold
+* model quality snapshot
+* risk distribution
+* probability distribution
+* risk-band counts
+* top high-risk transactions
 
-flagged transactions
-
-flagged rate
-
-P95 fraud probability
-
-average probability
-
-maximum probability
-
-true fraud rate
-
-selected threshold
-
-model quality snapshot
-
-risk distribution
-
-probability distribution
-
-risk-band counts
-
-top high-risk transactions
-
-Analyze Transaction
+### Analyze Transaction
 
 The Analyze Transaction view allows an analyst to enter transaction attributes and evaluate an individual transaction.
 
 The result includes:
 
-fraud probability
-
-fraud flag
-
-risk band
-
-analyst reason codes
-
-transaction details
-
-model explanation
+* fraud probability
+* fraud flag
+* risk band
+* analyst reason codes
+* transaction details
+* model explanation
 
 The interface was verified with both high-risk and low-risk inputs.
 
-Transactions
+### Transactions
 
 The Transactions view provides transaction-level review.
 
 It supports:
 
-transaction browsing
-
-fraud probability
-
-risk-band classification
-
-fraud flag
-
-transaction details
-
-individual transaction inspection
-
-SHAP explanation
-
-analyst reason codes
+* transaction browsing
+* fraud probability
+* risk-band classification
+* fraud flag
+* transaction details
+* individual transaction inspection
+* SHAP explanation
+* analyst reason codes
 
 Selecting a transaction opens a detailed review view.
 
-Users
+### Users
 
 The Users view provides user-level fraud-risk analysis.
 
 It supports:
 
-user selection
-
-transaction count
-
-flagged transaction count
-
-flagged rate
-
-average fraud probability
-
-risk-band distribution
-
-user risk summary
-
-user transaction history
-
-transaction-level drill-down
-
-SHAP explanation for selected transactions
+* user selection
+* transaction count
+* flagged transaction count
+* flagged rate
+* average fraud probability
+* risk-band distribution
+* user risk summary
+* user transaction history
+* transaction-level drill-down
+* SHAP explanation for selected transactions
 
 This adds a second level of analysis beyond individual transaction scoring.
 
-Analytics
+### Analytics
 
 The Analytics view provides portfolio-level analysis of:
 
-risk-band distribution
+* risk-band distribution
+* fraud probability distribution
+* transaction risk patterns
+* flagged transaction behavior
+* aggregate risk statistics
 
-fraud probability distribution
-
-transaction risk patterns
-
-flagged transaction behavior
-
-aggregate risk statistics
-
-Model Performance
+### Model Performance
 
 The Model Performance view provides model-quality information including:
 
-ROC-AUC
-
-PR-AUC / Average Precision
-
-Brier Score
-
-saved threshold
-
-evaluation context
+* ROC-AUC
+* PR-AUC / Average Precision
+* Brier Score
+* saved threshold
+* evaluation context
 
 This separates model-quality monitoring from individual transaction review.
 
-Frontend Configuration
+### Frontend Configuration
 
 The frontend connects to the backend through:
 
+```text
 VITE_API_URL
+```
 
 For local development:
 
+```text
 VITE_API_URL=http://127.0.0.1:8001
+```
 
 For the deployed application, this environment variable points to the public FastAPI backend.
 
-Streamlit Reference Dashboard
+---
 
-The original Streamlit application remains in the repository as a local analytical reference implementation of the fraud-risk workflow.
+## Streamlit Reference Dashboard
+
+The original Streamlit application remains in the repository as a **local analytical reference implementation** of the fraud-risk workflow.
 
 Launch it with:
 
+```bash
 streamlit run app.py
+```
 
 The reference dashboard supports:
 
-uploading transaction CSV files
+* uploading transaction CSV files
+* validating uploaded columns
+* adjusting fraud threshold
+* viewing risk distribution
+* reviewing top-risk transactions
+* downloading scored CSV files
+* inspecting selected transactions with SHAP
+* viewing analyst-friendly reason codes
+* checking model metadata and saved threshold
 
-validating uploaded columns
+The **deployed application uses the FastAPI + React architecture**.
 
-adjusting fraud threshold
+---
 
-viewing risk distribution
-
-reviewing top-risk transactions
-
-downloading scored CSV files
-
-inspecting selected transactions with SHAP
-
-viewing analyst-friendly reason codes
-
-checking model metadata and saved threshold
-
-The deployed application uses the FastAPI + React architecture.
-
-Explainability and Reason Codes
+## Explainability and Reason Codes
 
 The project includes two complementary explanation layers.
 
-SHAP Explanations
+### SHAP Explanations
 
 SHAP is used to inspect how transformed model features contribute to an individual prediction.
 
@@ -1025,12 +855,13 @@ The explanation workflow uses the trained tree-based model to identify the stron
 
 The application displays the most important contributions for the selected transaction.
 
-Analyst Reason Codes
+### Analyst Reason Codes
 
 Reason codes convert risk signals into short, reviewable explanations.
 
 Examples include:
 
+```text
 High device risk score
 High IP risk score
 Transaction amount is high for this batch
@@ -1038,199 +869,113 @@ Transaction occurred during unusual hours
 Merchant category is higher risk in the demo data
 Critical model risk score
 Model score is above the review threshold
+```
 
-Reason codes are not causal explanations. They are analyst-facing summaries designed to make transaction triage easier.
+Reason codes are **not causal explanations**. They are analyst-facing summaries designed to make transaction triage easier.
 
-Risk Bands and Decision Policy
+---
+
+## Risk Bands and Decision Policy
 
 The application translates fraud probability into four risk bands:
 
-Fraud Probability
-
-Risk Band
-
-≤ 0.25
-
-Low
-
-> 0.25 – 0.50
-
-Medium
-
-> 0.50 – 0.75
-
-High
-
-> 0.75
-
-Critical
+| Fraud Probability | Risk Band |
+| ----------------: | --------- |
+|          `≤ 0.25` | Low       |
+|   `> 0.25 – 0.50` | Medium    |
+|   `> 0.50 – 0.75` | High      |
+|          `> 0.75` | Critical  |
 
 The saved decision threshold is used to determine whether a transaction is flagged for review.
 
 This separates:
 
-Model probability
-
-Decision threshold
-
-Risk-band interpretation
-
-Analyst explanation
+1. **Model probability**
+2. **Decision threshold**
+3. **Risk-band interpretation**
+4. **Analyst explanation**
 
 This distinction is important because a model probability is not itself an automatic business decision.
 
-Evaluation Metrics
+---
+
+## Evaluation Metrics
 
 The evaluation layer includes metrics designed for imbalanced fraud-risk workflows.
 
-Metric
+| Metric                     | Why it matters                                       |
+| -------------------------- | ---------------------------------------------------- |
+| ROC-AUC                    | Measures ranking quality across thresholds           |
+| Average Precision / PR-AUC | More informative for imbalanced fraud datasets       |
+| Brier Score                | Measures probability quality and calibration         |
+| Precision                  | Measures how many flagged cases are actually fraud   |
+| Recall                     | Measures how many fraud cases are caught             |
+| False-positive rate        | Measures legitimate-user friction                    |
+| Flagged rate               | Estimates review workload                            |
+| Cost                       | Encodes false-positive and false-negative trade-offs |
 
-Why it matters
-
-ROC-AUC
-
-Measures ranking quality across thresholds
-
-Average Precision / PR-AUC
-
-More informative for imbalanced fraud datasets
-
-Brier Score
-
-Measures probability quality and calibration
-
-Precision
-
-Measures how many flagged cases are actually fraud
-
-Recall
-
-Measures how many fraud cases are caught
-
-False-positive rate
-
-Measures legitimate-user friction
-
-Flagged rate
-
-Estimates review workload
-
-Cost
-
-Encodes false-positive and false-negative trade-offs
-
-Original Reproducible Workflow Example
+### Original Reproducible Workflow Example
 
 The analytical workflow includes example results for the documented synthetic-data configuration.
 
-Metric
+| Metric                          | Example Value |
+| ------------------------------- | ------------: |
+| ROC-AUC                         |         0.976 |
+| Average precision / PR-AUC      |         0.838 |
+| Brier score                     |         0.061 |
+| Selected threshold              |          0.35 |
+| Precision at selected threshold |         0.481 |
+| Recall at selected threshold    |         0.974 |
+| Flagged rate                    |         0.223 |
 
-Example Value
+> These values are from the synthetic demonstration workflow and should not be interpreted as real-world fraud detection performance.
 
-ROC-AUC
+---
 
-0.976
-
-Average precision / PR-AUC
-
-0.838
-
-Brier score
-
-0.061
-
-Selected threshold
-
-0.35
-
-Precision at selected threshold
-
-0.481
-
-Recall at selected threshold
-
-0.974
-
-Flagged rate
-
-0.223
-
-These values are from the synthetic demonstration workflow and should not be interpreted as real-world fraud detection performance.
-
-Verified Deployed Results
+## Verified Deployed Results
 
 The deployed application was separately verified using the actual trained model, FastAPI backend, and React frontend.
 
-Model Evaluation
+### Model Evaluation
 
-Metric
+| Metric                     | Verified Value |
+| -------------------------- | -------------: |
+| ROC-AUC                    |         ~0.948 |
+| Average Precision / PR-AUC |         ~0.754 |
+| Brier Score                |         ~0.058 |
+| Saved Threshold            |           0.35 |
 
-Verified Value
+### Dashboard Scoring Results
 
-ROC-AUC
-
-~0.948
-
-Average Precision / PR-AUC
-
-~0.754
-
-Brier Score
-
-~0.058
-
-Saved Threshold
-
-0.35
-
-Dashboard Scoring Results
-
-Metric
-
-Verified Value
-
-Transactions Scored
-
-1,000
-
-Flagged Transactions
-
-217
-
-Flagged Rate
-
-21.70%
-
-P95 Fraud Probability
-
-82.28%
-
-Average Fraud Probability
-
-21.36%
-
-Maximum Fraud Probability
-
-98.91%
-
-True Fraud Rate
-
-10.50%
+| Metric                    | Verified Value |
+| ------------------------- | -------------: |
+| Transactions Scored       |          1,000 |
+| Flagged Transactions      |            217 |
+| Flagged Rate              |         21.70% |
+| P95 Fraud Probability     |         82.28% |
+| Average Fraud Probability |         21.36% |
+| Maximum Fraud Probability |         98.91% |
+| True Fraud Rate           |         10.50% |
 
 These values were verified through the deployed application and actual API/model flow.
 
-Individual Transaction Verification
+---
 
-High-Risk Transaction
+## Individual Transaction Verification
+
+### High-Risk Transaction
 
 A high-risk transaction was tested through the deployed Analyze Transaction workflow.
 
+```text
 Fraud Probability: 98.91%
 Risk Band: Critical
 Decision: FLAGGED
+```
 
 The transaction contained signals including:
 
+```text
 Amount: 125.47
 Hour: 2
 Device Risk: 0.789
@@ -1238,245 +983,205 @@ IP Risk: 0.4796
 Transaction Type: transfer
 Merchant Category: crypto
 Country: CN
+```
 
 The application returned both analyst reason codes and SHAP feature contributions.
 
-Low-Risk Transaction
+### Low-Risk Transaction
 
 A low-risk transaction was also tested.
 
+```text
 Fraud Probability: 2.64%
 Risk Band: Low
 Decision: CLEAR
+```
 
 This confirms that the deployed application is connected to the actual FastAPI/model workflow rather than displaying hardcoded demonstration values.
 
-All results in this section are based on synthetic demonstration data and should not be interpreted as real-world fraud detection performance.
+> All results in this section are based on synthetic demonstration data and should not be interpreted as real-world fraud detection performance.
 
-Visual Reports
+---
+
+## Visual Reports
 
 The project includes generated model-evaluation charts.
 
-ROC Curve
+### ROC Curve
 
+```text
 reports/figures/roc_curve.png
+```
 
 ROC-AUC summarizes the model's ranking ability across thresholds.
 
-Precision-Recall Curve
+### Precision-Recall Curve
 
+```text
 reports/figures/pr_curve.png
+```
 
 PR-AUC is especially useful for fraud detection because the positive class is relatively rare and false positives affect review workload.
 
-Calibration Curve
+### Calibration Curve
 
+```text
 reports/figures/calibration_curve.png
+```
 
 Calibration shows whether predicted probabilities behave like meaningful probabilities.
 
-Threshold Cost Curve
+### Threshold Cost Curve
 
+```text
 reports/figures/threshold_cost_curve.png
+```
 
 The cost curve shows how false-positive and false-negative assumptions affect threshold selection.
 
-Threshold Tradeoffs
+### Threshold Tradeoffs
 
+```text
 reports/figures/threshold_tradeoffs.png
+```
 
 This chart compares:
 
-precision
-
-recall
-
-false-positive rate
-
-flagged rate
+* precision
+* recall
+* false-positive rate
+* flagged rate
 
 across different thresholds.
 
-Confusion Matrix
+### Confusion Matrix
 
+```text
 reports/figures/confusion_matrix.png
+```
 
 The confusion matrix provides a direct view of:
 
-true positives
+* true positives
+* true negatives
+* false positives
+* false negatives
 
-true negatives
+---
 
-false positives
-
-false negatives
-
-Testing and CI
+## Testing and CI
 
 The project includes automated tests covering important parts of the workflow.
 
-Run Unit Tests
+### Run Unit Tests
 
+```bash
 python -m unittest discover -s tests -v
+```
 
-Compile Source Files
+### Compile Source Files
 
+```bash
 python -m compileall src app.py tests
+```
 
 The test suite covers areas including:
 
-dashboard helpers
-
-evaluation behavior
-
-project integrity
-
-reason-code generation
-
-synthetic data generation
-
-threshold policy
-
-validation
-
-scoring
-
-workflow contracts
-
-SHAP explanation functionality
+* dashboard helpers
+* evaluation behavior
+* project integrity
+* reason-code generation
+* synthetic data generation
+* threshold policy
+* validation
+* scoring
+* workflow contracts
+* SHAP explanation functionality
 
 The project was verified with the automated test suite, with Streamlit-only checks treated separately from the core workflow.
 
-GitHub Actions
+### GitHub Actions
 
 The GitHub Actions workflow is defined in:
 
+```text
 .github/workflows/ci.yml
+```
 
 The workflow checks:
 
-dependency installation
-
-source compilation
-
-unit tests
-
-synthetic-data generation
-
-data preparation
-
-model training
-
-evaluation
-
-scoring
-
-scored CSV schema validation
-
-expected model artifacts
-
-expected report artifacts
+* dependency installation
+* source compilation
+* unit tests
+* synthetic-data generation
+* data preparation
+* model training
+* evaluation
+* scoring
+* scored CSV schema validation
+* expected model artifacts
+* expected report artifacts
 
 This helps ensure that changes do not silently break the ML workflow.
 
-Code Quality
+---
+
+## Code Quality
 
 The project separates major responsibilities across modules.
 
-Module
-
-Purpose
-
-src/generate_synthetic_data.py
-
-Creates harder synthetic fraud data
-
-src/data_prep.py
-
-Prepares train/test datasets
-
-src/features.py
-
-Builds preprocessing and model pipeline
-
-src/train_model.py
-
-Trains and saves the fraud model
-
-src/evaluate.py
-
-Evaluates metrics, thresholds and plots
-
-src/threshold_policy.py
-
-Generates threshold policy artifacts
-
-src/score_new_transactions.py
-
-Scores new transaction CSV files
-
-src/validation.py
-
-Validates training and scoring input schemas
-
-src/reason_codes.py
-
-Generates analyst-friendly risk explanations
-
-src/dashboard_utils.py
-
-Provides dashboard helper logic
-
-src/explain.py
-
-Provides SHAP explanation utilities
-
-api.py
-
-Provides FastAPI model-serving endpoints
-
-frontend/
-
-Provides the React analyst application
+| Module                           | Purpose                                      |
+| -------------------------------- | -------------------------------------------- |
+| `src/generate_synthetic_data.py` | Creates harder synthetic fraud data          |
+| `src/data_prep.py`               | Prepares train/test datasets                 |
+| `src/features.py`                | Builds preprocessing and model pipeline      |
+| `src/train_model.py`             | Trains and saves the fraud model             |
+| `src/evaluate.py`                | Evaluates metrics, thresholds and plots      |
+| `src/threshold_policy.py`        | Generates threshold policy artifacts         |
+| `src/score_new_transactions.py`  | Scores new transaction CSV files             |
+| `src/validation.py`              | Validates training and scoring input schemas |
+| `src/reason_codes.py`            | Generates analyst-friendly risk explanations |
+| `src/dashboard_utils.py`         | Provides dashboard helper logic              |
+| `src/explain.py`                 | Provides SHAP explanation utilities          |
+| `api.py`                         | Provides FastAPI model-serving endpoints     |
+| `frontend/`                      | Provides the React analyst application       |
 
 The separation allows the machine-learning workflow, API layer, and presentation layer to evolve independently.
 
-Deployment
+---
+
+## Deployment
 
 The completed application is deployed as separate frontend and backend services.
 
-Backend
+### Backend
 
 The FastAPI backend is deployed as a Render web service.
 
 It provides:
 
-model health
+* model health
+* metadata
+* prediction
+* scoring
+* transaction retrieval
+* explanations
+* SHAP
+* CSV export
 
-metadata
-
-prediction
-
-scoring
-
-transaction retrieval
-
-explanations
-
-SHAP
-
-CSV export
-
-Frontend
+### Frontend
 
 The React/Vite frontend is deployed as a Render static site.
 
 The frontend communicates with the backend through:
 
+```text
 VITE_API_URL
+```
 
-Deployment Architecture
+### Deployment Architecture
 
+```text
                      Public User
                          |
                          v
@@ -1506,23 +1211,25 @@ Deployment Architecture
                  └────────┬────────┘
                           v
                     Analyst Review
+```
 
 The deployment demonstrates separation between:
 
-frontend
-
-backend
-
-model-serving logic
+* frontend
+* backend
+* model-serving logic
 
 while maintaining a complete end-to-end workflow.
 
-Production-Oriented Engineering Decisions
+---
+
+## Production-Oriented Engineering Decisions
 
 Although the project uses synthetic data and is not a production fraud platform, the implementation demonstrates several engineering practices relevant to production ML systems.
 
-Separation of Concerns
+### Separation of Concerns
 
+```text
 Data / ML
     ↓
 Model Artifacts
@@ -1530,285 +1237,225 @@ Model Artifacts
 FastAPI
     ↓
 React Frontend
+```
 
 The model is not directly coupled to the frontend.
 
-Input Validation
+### Input Validation
 
 Required transaction columns are validated before scoring.
 
 This reduces the risk of malformed input reaching the model.
 
-Saved Model Artifact
+### Saved Model Artifact
 
 The trained model pipeline is saved and reused during inference.
 
 This keeps preprocessing and model inference consistent.
 
-Saved Threshold
+### Saved Threshold
 
 The decision threshold is stored separately from the trained model.
 
 This allows decision-policy changes without necessarily retraining the model.
 
-Explainability
+### Explainability
 
 SHAP and reason codes provide complementary explanation layers.
 
 SHAP focuses on model feature contributions, while reason codes summarize analyst-relevant risk signals.
 
-Automated Testing
+### Automated Testing
 
 The project includes automated tests for data generation, validation, scoring, threshold logic, reason codes, project integrity, and workflow contracts.
 
-Environment Configuration
+### Environment Configuration
 
 The frontend/backend connection is configured through an environment variable rather than hardcoding the production API URL into the frontend application.
 
-Limitations
+---
+
+## Limitations
 
 This project intentionally has limitations because it is a portfolio and research demonstration.
 
-Data
+### Data
 
-The dataset is synthetic.
+* The dataset is synthetic.
+* It does not represent a real banking or payment-network population.
+* Synthetic patterns may not reflect real fraud behavior.
 
-It does not represent a real banking or payment-network population.
+### Modeling
 
-Synthetic patterns may not reflect real fraud behavior.
+* Performance is based on the documented synthetic dataset.
+* Real-world performance can differ substantially.
+* Fraud patterns can change over time.
 
-Modeling
+### Deployment
 
-Performance is based on the documented synthetic dataset.
+* The public deployment is intended for demonstration.
+* Production authentication, authorization, audit logging, and monitoring are not implemented as a full enterprise system.
+* The application does not automatically block transactions.
 
-Real-world performance can differ substantially.
-
-Fraud patterns can change over time.
-
-Deployment
-
-The public deployment is intended for demonstration.
-
-Production authentication, authorization, audit logging, and monitoring are not implemented as a full enterprise system.
-
-The application does not automatically block transactions.
-
-Explainability
+### Explainability
 
 SHAP and reason codes are intended to support analyst understanding. They should not be treated as proof of causality.
 
-Responsible Use
+---
 
-The system is designed as a decision-support demonstration.
+## Responsible Use
+
+The system is designed as a **decision-support demonstration**.
 
 A real financial fraud platform would require:
 
-validated production data
-
-model-risk governance
-
-compliance review
-
-privacy and security controls
-
-access control
-
-audit logging
-
-monitoring and alerting
-
-drift detection
-
-adversarial testing
-
-fairness and subgroup analysis
-
-human review and escalation
-
-controlled retraining and deployment processes
+* validated production data
+* model-risk governance
+* compliance review
+* privacy and security controls
+* access control
+* audit logging
+* monitoring and alerting
+* drift detection
+* adversarial testing
+* fairness and subgroup analysis
+* human review and escalation
+* controlled retraining and deployment processes
 
 The model's output should therefore be interpreted as a risk signal rather than an automatic financial decision.
 
-Future Improvements
+---
+
+## Future Improvements
 
 Potential future improvements include:
 
-Add drift simulation and drift monitoring
+* Add drift simulation and drift monitoring
+* Add calibration model comparison
+* Add time-based train/test split
+* Add reviewer feedback loop
+* Add Docker support
+* Add model card and data statement
+* Add fairness and subgroup analysis
+* Add model registry-style metadata
+* Add alerting and monitoring examples
+* Add richer transaction sequence features
+* Add behavioral user features
+* Add production-style authentication
+* Add role-based access control
+* Add persistent audit logging
+* Add real-time event-stream processing
+* Add automated model retraining
+* Add deployment validation gates
 
-Add calibration model comparison
+---
 
-Add time-based train/test split
+## Tech Stack
 
-Add reviewer feedback loop
+### Machine Learning
 
-Add Docker support
+* Python
+* pandas
+* NumPy
+* scikit-learn
+* SciPy
+* SHAP
+* joblib
 
-Add model card and data statement
+### Backend
 
-Add fairness and subgroup analysis
+* FastAPI
+* Uvicorn
+* Pydantic
+* REST APIs
 
-Add model registry-style metadata
+### Frontend
 
-Add alerting and monitoring examples
+* React
+* Vite
+* Recharts
+* Lucide React
+* CSS
 
-Add richer transaction sequence features
+### Data Visualization
 
-Add behavioral user features
+* matplotlib
 
-Add production-style authentication
+### Testing
 
-Add role-based access control
+* unittest
+* GitHub Actions
 
-Add persistent audit logging
+### Engineering
 
-Add real-time event-stream processing
+* Git
+* GitHub
 
-Add automated model retraining
+### Deployment
 
-Add deployment validation gates
+* Render
 
-Tech Stack
+### Local Reference Dashboard
 
-Machine Learning
+* Streamlit
 
-Python
+---
 
-pandas
+## Key Technical Concepts Demonstrated
 
-NumPy
+### Machine Learning
 
-scikit-learn
+* Binary classification
+* Random Forest
+* Feature preprocessing
+* Probability prediction
+* Class imbalance
+* Model evaluation
+* Probability calibration
 
-SciPy
+### Fraud-Risk Modeling
 
-SHAP
+* Cost-sensitive thresholding
+* Precision/recall trade-offs
+* Review-capacity considerations
+* Fraud probability ranking
+* Risk-band classification
+* Analyst triage
 
-joblib
+### Explainable AI
 
-Backend
+* SHAP
+* Feature contributions
+* Analyst reason codes
+* Individual prediction explanations
 
-FastAPI
+### ML Engineering
 
-Uvicorn
-
-Pydantic
-
-REST APIs
-
-Frontend
-
-React
-
-Vite
-
-Recharts
-
-Lucide React
-
-CSS
-
-Data Visualization
-
-matplotlib
-
-Testing
-
-unittest
-
-GitHub Actions
-
-Engineering
-
-Git
-
-GitHub
-
-Deployment
-
-Render
-
-Local Reference Dashboard
-
-Streamlit
-
-Key Technical Concepts Demonstrated
-
-Machine Learning
-
-Binary classification
-
-Random Forest
-
-Feature preprocessing
-
-Probability prediction
-
-Class imbalance
-
-Model evaluation
-
-Probability calibration
-
-Fraud-Risk Modeling
-
-Cost-sensitive thresholding
-
-Precision/recall trade-offs
-
-Review-capacity considerations
-
-Fraud probability ranking
-
-Risk-band classification
-
-Analyst triage
-
-Explainable AI
-
-SHAP
-
-Feature contributions
-
-Analyst reason codes
-
-Individual prediction explanations
-
-ML Engineering
-
-Reusable pipelines
-
-Saved model artifacts
-
-Input validation
-
-Batch scoring
-
-API model serving
-
-Automated testing
-
-CI workflows
-
-Application Engineering
-
-REST APIs
-
-FastAPI
-
-React
-
-Vite
-
-Frontend/backend integration
-
-Environment configuration
-
-Cloud deployment
-
-Project Status
+* Reusable pipelines
+* Saved model artifacts
+* Input validation
+* Batch scoring
+* API model serving
+* Automated testing
+* CI workflows
+
+### Application Engineering
+
+* REST APIs
+* FastAPI
+* React
+* Vite
+* Frontend/backend integration
+* Environment configuration
+* Cloud deployment
+
+---
+
+## Project Status
 
 The current project includes:
 
+```text
 Machine Learning Model             ✓
 Data Validation                   ✓
 Threshold Optimization            ✓
@@ -1827,43 +1474,40 @@ Automated Tests                   ✓
 GitHub Actions CI                 ✓
 Cloud Deployment                  ✓
 End-to-End Verification           ✓
+```
 
 The deployed application has been tested across the major workflows:
 
-Dashboard
+* Dashboard
+* Analyze Transaction
+* Transactions
+* Users
+* Analytics
+* Model Performance
+* Individual transaction explanations
+* SHAP explanations
+* Backend/API connectivity
+* CSV export
 
-Analyze Transaction
+---
 
-Transactions
+## Author
 
-Users
-
-Analytics
-
-Model Performance
-
-Individual transaction explanations
-
-SHAP explanations
-
-Backend/API connectivity
-
-CSV export
-
-Author
-
-Rohan Pagare
+**Rohan Pagare**
 
 Data Scientist
 
 GitHub:
-https://github.com/Rohan1-tech
+[https://github.com/Rohan1-tech](https://github.com/Rohan1-tech)
 
 Project Repository:
-https://github.com/Rohan1-tech/Financial-Fraud-Risk-Engine
+[https://github.com/Rohan1-tech/Financial-Fraud-Risk-Engine](https://github.com/Rohan1-tech/Financial-Fraud-Risk-Engine)
 
-Final Project Workflow
+---
 
+## Final Project Workflow
+
+```text
 Business Problem
        ↓
 Synthetic Data Generation
@@ -1899,3 +1543,7 @@ Model Performance Review
 Testing & CI
        ↓
 Cloud Deployment
+```
+
+```
+```
