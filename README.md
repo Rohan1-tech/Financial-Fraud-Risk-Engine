@@ -35,7 +35,7 @@ The system analyzes transaction-level behavioral and risk signals such as **tran
 
 The project demonstrates how a Data Scientist can take a fraud model beyond a notebook and build a **complete ML decision workflow — from data preparation and model evaluation to threshold policy, prediction, explainability, API serving, analyst investigation, and deployment.**
 
-> **Important:** This project uses **synthetic data** and is intended as a portfolio and research demonstration. It is not a production fraud detection system and should not be used for real financial decisions without appropriate real-world data, validation, monitoring, governance, compliance review, security controls, and domain-expert approval.
+
 
 ---
 
