@@ -13,11 +13,29 @@
 
 </div>
 
-A production-minded fraud-risk workflow for detecting suspicious transactions with **cost-sensitive thresholding**, **validation**, **explainability**, **reason codes**, **batch scoring**, **API model serving**, **analyst dashboard review**, and **threshold policy artifacts**.
+An end-to-end **fraud-risk analytics and decision-support system** that combines **machine learning, cost-sensitive thresholding, explainable AI, batch scoring, REST API model serving, and an interactive analyst dashboard**.
 
-> **Important:** This project is a **portfolio and research demo**, not a production fraud detection system.
->
-> The data is synthetic. The model, thresholds, and reason codes are designed to demonstrate a professional fraud-risk workflow, not to make real financial decisions without expert validation, monitoring, compliance review, governance, and security controls.
+The system analyzes transaction-level behavioral and risk signals such as **transaction amount, transaction timing, device risk, IP risk, transaction type, merchant category, and country**. It generates a fraud probability, applies a configurable decision threshold, and converts the result into actionable **Low, Medium, High, or Critical risk bands**.
+
+### What the Project Demonstrates
+
+- **Machine learning-based fraud probability scoring** using a trained classification pipeline
+- **Cost-sensitive threshold optimization** to balance false positives, false negatives, and review workload
+- **Transaction-level risk classification** using configurable decision policies
+- **Analyst-friendly reason codes** that summarize important risk signals
+- **SHAP-based explainability** for understanding individual model predictions
+- **Batch scoring** for processing complete transaction datasets
+- **FastAPI model serving** through REST API endpoints
+- **React + Vite analyst application** for interactive fraud-risk monitoring
+- **User-level risk analysis** for investigating transaction behavior
+- **Analytics and model-performance views** for portfolio and model review
+- **CSV export** for scored transaction data
+- **Automated testing and CI** to validate the ML workflow
+- **Cloud deployment** with separate frontend and backend services
+
+The project demonstrates how a Data Scientist can take a fraud model beyond a notebook and build a **complete ML decision workflow — from data preparation and model evaluation to threshold policy, prediction, explainability, API serving, analyst investigation, and deployment.**
+
+> **Important:** This project uses **synthetic data** and is intended as a portfolio and research demonstration. It is not a production fraud detection system and should not be used for real financial decisions without appropriate real-world data, validation, monitoring, governance, compliance review, security controls, and domain-expert approval.
 
 ---
 
